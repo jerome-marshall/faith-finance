@@ -1,3 +1,5 @@
+import AdminPanelLayout from "@/components/admin-panel/admin-panel-layout";
+import { ContentLayout } from "@/components/admin-panel/content-layout";
 import "@/styles/globals.css";
 
 import { GeistSans } from "geist/font/sans";
@@ -15,7 +17,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${GeistSans.variable}`}>
-      <body>{children}</body>
+      <body>
+        <AdminPanelLayout>
+          <ContentLayout>{children}</ContentLayout>
+        </AdminPanelLayout>
+      </body>
     </html>
   );
 }
